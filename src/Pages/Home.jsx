@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Navbar from "./Navbar";
 import a1 from "/about1.jpg";
 import a2 from "/about2.jpg";
@@ -54,7 +54,73 @@ const callouts = [
       }
   ]
 function Home() {
+  const ref = useRef(null);
 
+  useEffect(() => {
+    // Initial animation
+    const tl = gsap.timeline({
+      onComplete: () => {
+        // Animation to play after the initial animation completes
+        gsap.to(ref.current, { opacity: 0, duration: 0.1, repeat: 3, yoyo: true });
+      }
+    });
+
+    tl.fromTo(
+      ref.current,
+      { opacity: 0 },
+      { opacity: 1, duration: 1.5, scrub: 5 }
+    );
+  }, []);
+
+  const ref2 = useRef(null);
+
+  useEffect(() => {
+    // Initial animation
+    const tl = gsap.timeline({
+      onComplete: () => {
+        // Animation to play after the initial animation completes
+        gsap.fromTo(ref2.current, { opacity: 0, y:100, duration: 0.1, repeat: 3, yoyo: true },{opacity:1, y:0});
+      }
+    });
+
+  }, []);
+
+  const ref3 = useRef(null);
+
+  useEffect(() => {
+    // Initial animation
+    const tl = gsap.timeline({
+      onComplete: () => {
+        // Animation to play after the initial animation completes
+        gsap.fromTo(ref3.current, { opacity: 0, y:100, duration: 0.1, repeat: 3, yoyo: true },{opacity:1, y:0});
+      }
+    });
+
+  
+  }, []);
+
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    // Animation for each div
+    gsap.utils.toArray(".animated-left").forEach((element) => {
+      gsap.fromTo(
+        element,
+        { opacity: 0, x: -100 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: element,
+            start: "top 80%",
+            end: "top 50%",
+            scrub: 3,
+          },
+        }
+      );
+    });
+  }, []);
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     // Animation for each div
@@ -126,9 +192,10 @@ function Home() {
     <div className="relative bg-transparent overflow-x-hidden">
       {/* Background Image */}
       <div
+      id="home"
         className="relative bg-transparent mx-auto flex max-w-full items-center justify-between p-6 lg:px-8"
         style={{
-          backgroundImage: `url("/interior-design.jpeg")`,
+          backgroundImage:` url("/interior-design.jpeg")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           height: "100vh",
@@ -136,26 +203,26 @@ function Home() {
       >
         {/* Main Content */}
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center mx-3 mb-5">
-          <h1 className="text-5xl font-bold tracking-tight sm:text-6xl text-gray-500">
+          <h1 className="text-5xl font-bold tracking-tight sm:text-6xl text-gray-500" ref={ref}>
             We Create Your Space Better
           </h1>
-          <p className="mt-6 text-lg text-gray-700 leading-8">
+          <p className="mt-6 text-lg text-gray-700 leading-8" ref={ref2}>
             Your home should tell the story of who you are, and be a collection
             of what you love.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <a
-              href="#"
-              className="rounded-md bg-gray-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            >
-              Conduct Us <span aria-hidden="true">→</span>
+              href="#contact"
+              className="rounded-md bg-gray-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 "
+              ref={ref3} >
+              Contact Us <span aria-hidden="true">→</span>
             </a>
           </div>
         </div>
       </div>
       {/* about us start */}
       <section
-        id="carouselItem2"
+        id="about"
         className="overflow-hidden px-5 pt-5 pb-10 lg:pt-[50px] lg:pb-[60px] bg-gray-200 dark:bg-dark "
       >
         <div className="container mx-auto">
@@ -248,11 +315,11 @@ function Home() {
 {/* All Catogory Content end */}
 
       {/* services start */}
-      <div className="bg-gray-200 pt-10">
+      <div className="bg-gray-200 pt-10" id="service">
       <div className="mx-auto  lg:mx-0 text-center">
           <h2 className="animated-up  text-3xl font-bold text-gray-500 sm:text-[40px]/[48px]">Our Services</h2>
           <p className="animated-up mt-2 text-lg leading-8 text-gray-600">
-            Learn how to grow your business with our expert advice.
+          Elevate your space with our custom interior design solutions
           </p>
         </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -306,7 +373,7 @@ function Home() {
       {/* testimonial end */}
 {/* contact us start */}
 {/* Contact Page Start */}
-<section className="bg-gray-200 ">
+<section className="bg-gray-200 pb-10" id="contact">
         <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
           <h2 className="animated-up text-3xl font-bold text-gray-500 sm:text-[40px]/[48px] text-center">
             Contact Us
@@ -380,7 +447,7 @@ function Home() {
         </div>
       </section>
 {/* contact us end */}
-
+<div className="w-full md:text-sm text-[13px] justify-center flex text-white bg-black">Copyright © 2024. All rights reserved.</div>
     </div>
   );
 }
