@@ -6,36 +6,47 @@ import a3 from "/about3.jpg";
 import a4 from "/about4.jpg";
 import a5 from "/about5.jpg";
 import a6 from "/about6.jpg";
-import photo1 from "/services1.jpg";
-import icon1 from "/Icon1.svg";
-import photo2 from "/services2.jpg";
-import icon2 from "/Icon2.svg";
-import photo3 from "/services3.jpg";
-import icon3 from "/Icon3.svg";
-import photo4 from "/services4.jpg";
-import icon4 from "/Icon4.svg";
+import about from "/home.jpg";
+import bedroom from "/bedroom.jpg";
+import dinning from "/dinning.jpg";
+import kitchen from "/kitchen.jpg";
+import hall from "/hall.jpg";
+
+import { MdKitchen } from "react-icons/md";
+import { IoBagCheckOutline } from "react-icons/io5";
+import { HiOutlineOfficeBuilding } from "react-icons/hi";
+import { IoBed } from "react-icons/io5";
+import { HiOutlineSpeakerphone } from "react-icons/hi";
+import { IoIosHome } from "react-icons/io";
 const callouts = [
     {
-      name: 'Desk and Office',
-      description: 'Work from home accessories',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-01.jpg',
+      name: 'Relaxing',
+      description: 'Bed Room',
+      imageSrc:bedroom,
       imageAlt: 'Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.',
       href: '#',
     },
     {
-      name: 'Self-Improvement',
-      description: 'Journals and note-taking',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg',
+      name: 'Efficient',
+      description: 'Kitchen',
+      imageSrc: kitchen,
       imageAlt: 'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.',
       href: '#',
     },
     {
-      name: 'Travel',
-      description: 'Daily commute essentials',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg',
+      name: 'Welcoming',
+      description: 'Dinning Room',
+      imageSrc: dinning,
       imageAlt: 'Collection of four insulated travel bottles on wooden shelf.',
       href: '#',
     },
+    {
+        name: 'Comfortable',
+        description: 'Living Room',
+        imageSrc: hall,
+        imageAlt: 'Collection of four insulated travel bottles on wooden shelf.',
+        href: '#',
+      }
   ]
 function Home() {
 
@@ -79,9 +90,9 @@ function Home() {
           <div className="flex flex-wrap items-center justify-between -mx-4">
             <div className="w-full px-4 lg:w-6/12">
               <div className=" items-center -mx-3 sm:-mx-4 sm:flex md:flex lg:flex">
-                <div className="w-full px-3 sm:px-4 xl:w-1/2">
+                <div className="w-full px-3 sm:px-4 ">
                   <div className="relative z-10 my-4">
-                    <img src={a5} alt="" className="w-full rounded-2xl" />
+                    <img src={about} alt="" className="w-full rounded-2xl" />
                   </div>
                 </div>
               </div>
@@ -116,13 +127,67 @@ function Home() {
         </div>
       </section>
       {/* about us end */}
-      {/* services start */}
-      <div className="bg-gray-100">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-32">
-          <h2 className="text-2xl font-bold text-gray-900">Collections</h2>
+{/* All Catogory Content */}
+<div className="bg-gray-200">
+      <div className="container-lg container-fluid py-3 pb-10">
+        <h3 className="text-xl font-bold text-gray-500 sm:text-[30px]/[38px] text-center pt-10 py-8">HOME INTERIOR CATEGORIES</h3>
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+          {/* Cards start */}
+          <div className="py-3">
+            <div className="p-4 text-center square-card flex flex-col justify-center items-center">
+              <MdKitchen className="w-16 h-16 mb-2 text-3xl text-gray-900" />
+              <p className="text-sm mb-0 text-gray-600">Kitchen Sets</p>
+            </div>
+          </div>
+          <div className="py-3">
+            <div className="p-4 text-center square-card flex flex-col justify-center items-center">
+              <IoBagCheckOutline className="w-16 h-16 mb-2 text-3xl text-gray-900" />
+              <p className="text-sm mb-0 text-gray-600">Office Furnitures</p>
+            </div>
+          </div>
+          <div className="py-3">
+            <div className="p-4 text-center square-card flex flex-col justify-center items-center">
+              <HiOutlineOfficeBuilding className="w-16 h-16 mb-2 text-3xl text-gray-900" />
+              <p className="text-sm mb-0 text-gray-600">Dining Room</p>
+            </div>
+          </div>
+          <div className="py-3">
+            <div className="p-4 text-center square-card flex flex-col justify-center items-center">
+              <IoBed className="w-16 h-16 mb-2 text-3xl text-gray-900" />
+              <p className="text-sm mb-0 text-gray-600">Bed Room</p>
+            </div>
+          </div>
+          <div className="py-3">
+            <div className="p-4 text-center square-card flex flex-col justify-center items-center">
+              <HiOutlineSpeakerphone className="w-16 h-16 mb-2 text-3xl text-gray-900" />
+              <p className="text-sm mb-0 text-gray-600 ">Music Room</p>
+            </div>
+          </div>
+          <div className="py-3">
+            <div className="p-4 text-center square-card flex flex-col justify-center items-center">
+              <IoIosHome className="w-16 h-16 mb-2 text-3xl text-gray-900" />
+              <p className="text-sm mb-0 text-gray-600">Home Living</p>
+            </div>
+          </div>
+          {/* Cards end */}
+        </div>
+      </div>
+    </div>
+{/* All Catogory Content end */}
 
-          <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
+      {/* services start */}
+      <div className="bg-gray-200 pt-10">
+      <div className="mx-auto  lg:mx-0 text-center">
+          <h2 className=" text-3xl font-bold text-gray-500 sm:text-[40px]/[48px]">Our Services</h2>
+          <p className="mt-2 text-lg leading-8 text-gray-600">
+            Learn how to grow your business with our expert advice.
+          </p>
+        </div>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl py-5 sm:py-5 lg:max-w-none lg:py-5">
+       
+
+          <div className="mt-6 space-y-12 lg:grid lg:grid-cols-2 lg:gap-x-6 lg:space-y-0">
             {callouts.map((callout) => (
               <div key={callout.name} className="group relative">
                 <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
@@ -146,80 +211,104 @@ function Home() {
       </div>
     </div>
       {/* services end */}
-      {/* how we work start */}
-      <div className="container md:px-10 bg-gray-200 howWeWork">
-        <div className="how-title  ml-10">
-          <h1 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl pb-6'>How We Work</h1>
-          <p className='text-lg'>
-            It is a long established fact will be distracted.Lorem Ipsum is
-            simply dummy text of the printing and typesetting industry.
-          </p>
-        </div>
-        <div className="how-content">
-            <div className="hc-img">
-                <img src={"https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} alt='concept'></img>
-            </div>
-            <div className="hc-text">
-                <div className="hc-text-anima">
-                    <img src={icon1} alt="icon"></img>
-                    <p>01</p>
-                </div>
-                <div className="hc-subtext">
-                    <h2 className='text-xl'>Elevate Your Space</h2>
-                    <p className='text-lg'>Transform ordinary rooms into extraordinary spaces with our innovative interior design solutions. Let us redefine your living or working environment, turning your vision into reality.</p>
-                </div>
-            </div>
-        </div>
-            
-        <div className="how-content">
-            <div className="hc-text">
-                <div className="hc-text-anima">
-                    <img src={icon2} alt="icon"></img>
-                    <p>02</p>
-                </div>
-                <div className="hc-subtext">
-                    <h2 className='text-xl'>Tailored Design Excellence</h2>
-                    <p className='text-lg'>Experience bespoke interior design tailored to your unique style and preferences. From concept to execution, our team crafts personalized solutions that reflect your personality and elevate your lifestyle.</p>
-                </div>
-            </div>
-            <div className="hc-img">
-                <img src={"https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} alt='concept'></img>
-            </div>
-        </div>
-        
-        <div className="how-content">
-            <div className="hc-img">
-                <img src={"https://images.pexels.com/photos/6301180/pexels-photo-6301180.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} alt='concept'></img>
-            </div>
-            <div className="hc-text">
-                <div className="hc-text-anima">
-                    <img src={icon3} alt="icon"></img>
-                    <p>03</p>
-                </div>
-                <div className="hc-subtext">
-                    <h2 className='text-xl'>Timeless Elegance</h2>
-                    <p className='text-lg'>Discover timeless elegance and sophistication in every detail. Our interior design expertise combines classic elements with contemporary flair to create spaces that stand the test of time.</p>
-                </div>
-            </div>
-        </div>
-        
-        <div className="how-content">
-            <div className="hc-text">
-                <div className="hc-text-anima">
-                    <img src={icon4} alt="icon"></img>
-                    <p>04</p>
-                </div>
-                <div className="hc-subtext">
-                    <h2 className='text-xl'>Inspired by Nature</h2>
-                    <p className='text-lg'>Immerse yourself in spaces inspired by the beauty of nature. Our designs seamlessly integrate natural elements, bringing harmony and serenity into your home or office environment.</p>
-                </div>
-            </div>
-            <div className="hc-img">
-                <img src={"https://images.pexels.com/photos/6969824/pexels-photo-6969824.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} alt='concept'></img>
-            </div>
-        </div>
+      {/* testimonial start */}
+      {/* <div className="bg-[#D1DCE5]">
+  <section className="md:py-10 py-5">
+    <h2 className="text-3xl font-bold mb-4 text-center">Customer Testimonials</h2>
+    <div className="flex flex-wrap justify-center gap-4 md:px-5 px-3">
+      <div className="bg-white p-4 rounded-md shadow-md w-full md:w-1/2 lg:w-1/3">
+        <p className="mb-4">
+          "I recently purchased a dining set from your store, and I must say I'm thoroughly impressed! The quality of the craftsmanship is exceptional, and the design perfectly complements my home decor. Thank you for providing such exquisite furniture!"
+        </p>
+        <p className="text-gray-600">- Emily Johnson, Happy Customer</p>
       </div>
-      {/* how we work end */}
+      <div className="bg-white p-4 rounded-md shadow-md w-full md:w-1/2 lg:w-1/3">
+        <p className="mb-4">
+          "I've been shopping at your furniture store for years, and each time I'm amazed by the wide selection and the attention to detail in your products. From bedroom sets to office furniture, everything I've purchased has exceeded my expectations. Keep up the fantastic work!"
+        </p>
+        <p className="text-gray-600">- Michael Adams, Loyal Customer</p>
+      </div>
+    </div>
+  </section>
+</div> */}
+      {/* testimonial end */}
+{/* contact us start */}
+{/* Contact Page Start */}
+<section className="bg-gray-200 dark:bg-gray-900">
+        <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+          <h2 className="text-3xl font-bold text-gray-500 sm:text-[40px]/[48px] text-center">
+            Contact Us
+          </h2>
+          <p className="mb-8 lg:mb-16  text-center text-gray-600 text-sm mt-5">
+            Looking to upgrade your living space with premium furniture? Don't
+            hesitate to reach out! Fill in the form below and let's transform
+            your home together.
+          </p>
+          <form action="#" className="space-y-8">
+            <div className="grid lg:flex lg:justify-between">
+              <div className="lg:w-1/2 lg:mr-2 py-lg-0 py-4">
+                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  Your Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
+              <div className="lg:w-1/2 lg:ml-2 py-4">
+                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  Your Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                Subject
+              </label>
+              <input
+                type="text"
+                id="subject"
+                className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                placeholder="Let us know how we can help you?"
+                required
+              />
+            </div>
+            <div className="sm:col-span-2">
+              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
+                Your message
+              </label>
+              <textarea
+                id="message"
+                rows="6"
+                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                placeholder="Leave a comment..."
+              ></textarea>
+            </div>
+            <div className="flex justify-center">
+                 <button
+                 type="submit"
+                 className=" py-3 px-4 text-sm font-medium text-white rounded-lg bg-gray-500 w-fit hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-400 dark:hover:bg-gray-500 dark:focus:ring-gray-600"
+                 >
+                 Send message
+                 </button>
+                 </div>
+
+          </form>
+        </div>
+      </section>
+{/* contact us end */}
+
     </div>
   );
 }
