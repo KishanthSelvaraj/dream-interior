@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "./Navbar";
 import a1 from "/about1.jpg";
 import a2 from "/about2.jpg";
@@ -18,6 +18,11 @@ import { HiOutlineOfficeBuilding } from "react-icons/hi";
 import { IoBed } from "react-icons/io5";
 import { HiOutlineSpeakerphone } from "react-icons/hi";
 import { IoIosHome } from "react-icons/io";
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 const callouts = [
     {
       name: 'Relaxing',
@@ -50,8 +55,75 @@ const callouts = [
   ]
 function Home() {
 
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    // Animation for each div
+    gsap.utils.toArray(".animated-left").forEach((element) => {
+      gsap.fromTo(
+        element,
+        { opacity: 0, x: -100 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: element,
+            start: "top 80%",
+            end: "top 50%",
+            scrub: 3,
+          },
+        }
+      );
+    });
+  }, []);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    // Animation for each div
+    gsap.utils.toArray(".animated-right").forEach((element) => {
+      gsap.fromTo(
+        element,
+        { opacity: 0, x: 100 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: element,
+            start: "top 80%",
+            end: "top 50%",
+            scrub: 3,
+          },
+        }
+      );
+    });
+  }, []);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    // Animation for each div
+    gsap.utils.toArray(".animated-up").forEach((element) => {
+      gsap.fromTo(
+        element,
+        { opacity: 0, y: 100 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: element,
+            start: "top 80%",
+            end: "top 50%",
+            scrub: 1,
+          },
+        }
+      );
+    });
+  }, []);
+
+
   return (
-    <div className="relative bg-transparent">
+    <div className="relative bg-transparent overflow-x-hidden">
       {/* Background Image */}
       <div
         className="relative bg-transparent mx-auto flex max-w-full items-center justify-between p-6 lg:px-8"
@@ -92,14 +164,14 @@ function Home() {
               <div className=" items-center -mx-3 sm:-mx-4 sm:flex md:flex lg:flex">
                 <div className="w-full px-3 sm:px-4 ">
                   <div className="relative z-10 my-4">
-                    <img src={about} alt="" className="w-full rounded-2xl" />
+                    <img src={about} alt="" className="animated-left  w-full rounded-2xl" />
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="w-full lg:w-1/2 xl:w-5/12">
-              <div className="mt-10 lg:mt-0 px-3">
+              <div className="animated-right  mt-10 lg:mt-0 px-3">
                 <h2 className="mb-5  text-3xl font-bold text-gray-500 sm:text-[40px]/[48px]">
                   What We do
                 </h2>
@@ -130,41 +202,41 @@ function Home() {
 {/* All Catogory Content */}
 <div className="bg-gray-200">
       <div className="container-lg container-fluid py-3 pb-10">
-        <h3 className="text-xl font-bold text-gray-500 sm:text-[30px]/[38px] text-center pt-10 py-8">HOME INTERIOR CATEGORIES</h3>
+        <h3 className="animated-up text-xl font-bold text-gray-500 sm:text-[30px]/[38px] text-center pt-10 py-8">HOME INTERIOR CATEGORIES</h3>
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
           {/* Cards start */}
           <div className="py-3">
-            <div className="p-4 text-center square-card flex flex-col justify-center items-center">
+            <div className="animated-left p-4 text-center square-card flex flex-col justify-center items-center">
               <MdKitchen className="w-16 h-16 mb-2 text-3xl text-gray-900" />
               <p className="text-sm mb-0 text-gray-600">Kitchen Sets</p>
             </div>
           </div>
           <div className="py-3">
-            <div className="p-4 text-center square-card flex flex-col justify-center items-center">
+            <div className="animated-right p-4 text-center square-card flex flex-col justify-center items-center">
               <IoBagCheckOutline className="w-16 h-16 mb-2 text-3xl text-gray-900" />
               <p className="text-sm mb-0 text-gray-600">Office Furnitures</p>
             </div>
           </div>
           <div className="py-3">
-            <div className="p-4 text-center square-card flex flex-col justify-center items-center">
+            <div className="animated-left p-4 text-center square-card flex flex-col justify-center items-center">
               <HiOutlineOfficeBuilding className="w-16 h-16 mb-2 text-3xl text-gray-900" />
               <p className="text-sm mb-0 text-gray-600">Dining Room</p>
             </div>
           </div>
           <div className="py-3">
-            <div className="p-4 text-center square-card flex flex-col justify-center items-center">
+            <div className="animated-right p-4 text-center square-card flex flex-col justify-center items-center">
               <IoBed className="w-16 h-16 mb-2 text-3xl text-gray-900" />
               <p className="text-sm mb-0 text-gray-600">Bed Room</p>
             </div>
           </div>
           <div className="py-3">
-            <div className="p-4 text-center square-card flex flex-col justify-center items-center">
+            <div className="animated-left p-4 text-center square-card flex flex-col justify-center items-center">
               <HiOutlineSpeakerphone className="w-16 h-16 mb-2 text-3xl text-gray-900" />
               <p className="text-sm mb-0 text-gray-600 ">Music Room</p>
             </div>
           </div>
           <div className="py-3">
-            <div className="p-4 text-center square-card flex flex-col justify-center items-center">
+            <div className="animated-right p-4 text-center square-card flex flex-col justify-center items-center">
               <IoIosHome className="w-16 h-16 mb-2 text-3xl text-gray-900" />
               <p className="text-sm mb-0 text-gray-600">Home Living</p>
             </div>
@@ -178,8 +250,8 @@ function Home() {
       {/* services start */}
       <div className="bg-gray-200 pt-10">
       <div className="mx-auto  lg:mx-0 text-center">
-          <h2 className=" text-3xl font-bold text-gray-500 sm:text-[40px]/[48px]">Our Services</h2>
-          <p className="mt-2 text-lg leading-8 text-gray-600">
+          <h2 className="animated-up  text-3xl font-bold text-gray-500 sm:text-[40px]/[48px]">Our Services</h2>
+          <p className="animated-up mt-2 text-lg leading-8 text-gray-600">
             Learn how to grow your business with our expert advice.
           </p>
         </div>
@@ -190,20 +262,20 @@ function Home() {
           <div className="mt-6 space-y-12 lg:grid lg:grid-cols-2 lg:gap-x-6 lg:space-y-0">
             {callouts.map((callout) => (
               <div key={callout.name} className="group relative">
-                <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
+                <div className="animated-left relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
                   <img
                     src={callout.imageSrc}
                     alt={callout.imageAlt}
                     className="h-full w-full object-cover object-center"
                   />
                 </div>
-                <h3 className="mt-6 text-sm text-gray-500">
+                <h3 className="animated-left mt-6 text-sm text-gray-500">
                   <a href={callout.href}>
                     <span className="absolute inset-0" />
                     {callout.name}
                   </a>
                 </h3>
-                <p className="text-base font-semibold text-gray-900">{callout.description}</p>
+                <p className="animated-left text-base font-semibold text-gray-900">{callout.description}</p>
               </div>
             ))}
           </div>
@@ -236,10 +308,10 @@ function Home() {
 {/* Contact Page Start */}
 <section className="bg-gray-200 ">
         <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-          <h2 className="text-3xl font-bold text-gray-500 sm:text-[40px]/[48px] text-center">
+          <h2 className="animated-up text-3xl font-bold text-gray-500 sm:text-[40px]/[48px] text-center">
             Contact Us
           </h2>
-          <p className="mb-8 lg:mb-16  text-center text-gray-600 text-sm mt-5">
+          <p className="animated-up mb-8 lg:mb-16  text-center text-gray-600 text-sm mt-5">
             Looking to upgrade your living space with premium furniture? Don't
             hesitate to reach out! Fill in the form below and let's transform
             your home together.
@@ -247,25 +319,25 @@ function Home() {
           <form action="#" className="space-y-8">
             <div className="grid lg:flex lg:justify-between">
               <div className="lg:w-1/2 lg:mr-2 py-lg-0 py-4">
-                <label className="block mb-2 text-sm font-medium text-gray-900 d">
+                <label className="animated-left block mb-2 text-sm font-medium text-gray-900 d">
                   Your Name
                 </label>
                 <input
                   type="text"
                   id="name"
-                  className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 "
+                  className="animated-left shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 "
                   placeholder="Enter your name"
                   required
                 />
               </div>
               <div className="lg:w-1/2 lg:ml-2 py-4">
-                <label className="block mb-2 text-sm font-medium text-gray-900 ">
+                <label className="animated-left block mb-2 text-sm font-medium text-gray-900 ">
                   Your Email
                 </label>
                 <input
                   type="email"
                   id="email"
-                  className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 "
+                  className="animated-left shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 "
                   placeholder="Enter your email"
                   required
                 />
@@ -273,32 +345,32 @@ function Home() {
             </div>
 
             <div>
-              <label className="block mb-2 text-sm font-medium text-gray-900">
+              <label className="animated-left block mb-2 text-sm font-medium text-gray-900">
                 Subject
               </label>
               <input
                 type="text"
                 id="subject"
-                className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 "
+                className="animated-left block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 "
                 placeholder="Let us know how we can help you?"
                 required
               />
             </div>
-            <div className="sm:col-span-2">
+            <div className="animated-left sm:col-span-2">
               <label className="block mb-2 text-sm font-medium text-gray-900 ">
                 Your message
               </label>
               <textarea
                 id="message"
                 rows="6"
-                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 "
+                className="animated-left block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 "
                 placeholder="Leave a comment..."
               ></textarea>
             </div>
             <div className="flex justify-center">
                  <button
                  type="submit"
-                 className=" py-3 px-4 text-sm font-medium text-white rounded-lg bg-gray-500 w-fit hover:bg-gray-600 focus:ring-4 focus:outline-none"
+                 className="  py-3 px-4 text-sm font-medium text-white rounded-lg bg-gray-500 w-fit hover:bg-gray-600 focus:ring-4 focus:outline-none"
                  >
                  Send message
                  </button>
