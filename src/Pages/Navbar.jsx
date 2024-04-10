@@ -1,4 +1,5 @@
 import { Fragment, useState } from "react";
+import '../App.css'
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 import {
   ArrowPathIcon,
@@ -28,7 +29,7 @@ export default function Navbar() {
     <nav className="absolute top-0 left-0 right-0 z-10 bg-transparent mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
       <div className="flex lg:flex-1">
         <a href="#" className="-m-1.5 p-1.5">
-          <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl text-gray-500">
+          <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl text-gray-500 font">
             Dream Interior
           </h1>
         </a>
@@ -79,11 +80,11 @@ export default function Navbar() {
       onClose={setMobileMenuOpen}
     >
       <div className="fixed inset-0 z-10" />
-      <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-gray-200 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+      <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[#dbdddc] px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
         <div className="flex items-center justify-between">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <h1 className="font-bold text-2xl md:text-2xl lg:text-2xl text-gray-500">
+            <h1 className="font-bold text-2xl md:text-2xl lg:text-2xl text-gray-500 font">
               Dream Interior
             </h1>
           </a>
