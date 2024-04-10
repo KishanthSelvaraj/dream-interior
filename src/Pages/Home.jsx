@@ -234,7 +234,7 @@ function Home() {
       {/* testimonial end */}
 {/* contact us start */}
 {/* Contact Page Start */}
-<section className="bg-gray-200 dark:bg-gray-900">
+<section className="bg-gray-200 ">
         <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
           <h2 className="text-3xl font-bold text-gray-500 sm:text-[40px]/[48px] text-center">
             Contact Us
