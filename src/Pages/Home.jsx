@@ -13,6 +13,7 @@ import kitchen from "/kitchen.jpg";
 import hall from "/hall.jpg";
 
 import { MdKitchen } from "react-icons/md";
+import { MdTableRestaurant } from "react-icons/md";
 import { IoBagCheckOutline } from "react-icons/io5";
 import { HiOutlineOfficeBuilding } from "react-icons/hi";
 import { IoBed } from "react-icons/io5";
@@ -275,37 +276,37 @@ function Home() {
           <div className="py-3">
             <div className="animated-left p-4 text-center square-card flex flex-col justify-center items-center">
               <MdKitchen className="w-16 h-16 mb-2 text-3xl text-gray-900" />
-              <p className="text-sm mb-0 text-gray-600">Kitchen Sets</p>
+              <p className="text-sm mb-0 text-gray-600">Modular Kitchen</p>
             </div>
           </div>
           <div className="py-3">
             <div className="animated-right p-4 text-center square-card flex flex-col justify-center items-center">
               <IoBagCheckOutline className="w-16 h-16 mb-2 text-3xl text-gray-900" />
-              <p className="text-sm mb-0 text-gray-600">Office Furnitures</p>
+              <p className="text-sm mb-0 text-gray-600">Pooja Unit</p>
             </div>
           </div>
           <div className="py-3">
             <div className="animated-left p-4 text-center square-card flex flex-col justify-center items-center">
               <HiOutlineOfficeBuilding className="w-16 h-16 mb-2 text-3xl text-gray-900" />
-              <p className="text-sm mb-0 text-gray-600">Dining Room</p>
+              <p className="text-sm mb-0 text-gray-600">Dinning Room</p>
             </div>
           </div>
           <div className="py-3">
             <div className="animated-right p-4 text-center square-card flex flex-col justify-center items-center">
               <IoBed className="w-16 h-16 mb-2 text-3xl text-gray-900" />
-              <p className="text-sm mb-0 text-gray-600">Bed Room</p>
+              <p className="text-sm mb-0 text-gray-600">Kids Bed Room</p>
             </div>
           </div>
           <div className="py-3">
             <div className="animated-left p-4 text-center square-card flex flex-col justify-center items-center">
-              <HiOutlineSpeakerphone className="w-16 h-16 mb-2 text-3xl text-gray-900" />
-              <p className="text-sm mb-0 text-gray-600 ">Music Room</p>
+              <MdTableRestaurant className="w-16 h-16 mb-2 text-3xl text-gray-900" />
+              <p className="text-sm mb-0 text-gray-600 ">Wardrobe</p>
             </div>
           </div>
           <div className="py-3">
             <div className="animated-right p-4 text-center square-card flex flex-col justify-center items-center">
               <IoIosHome className="w-16 h-16 mb-2 text-3xl text-gray-900" />
-              <p className="text-sm mb-0 text-gray-600">Home Living</p>
+              <p className="text-sm mb-0 text-gray-600">Living Room</p>
             </div>
           </div>
           {/* Cards end */}
@@ -423,14 +424,14 @@ function Home() {
                 required
               />
             </div>
-            <div className="animated-left sm:col-span-2">
+            <div className="animated-let sm:col-span-2">
               <label className="block mb-2 text-sm font-medium text-gray-900 ">
                 Your message
               </label>
               <textarea
                 id="message"
                 rows="6"
-                className="animated-left block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 "
+                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 "
                 placeholder="Leave a comment..."
               ></textarea>
             </div>

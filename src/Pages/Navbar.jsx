@@ -35,7 +35,7 @@ export default function Navbar() {
   return (
     <div>
     {/* Navbar */}
-    <nav className="absolute top-0 left-0 right-0 z-10 bg-transparent mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 bg-white">
+    <nav className="absolute top-0 left-0 right-0 z-10 bg-transparent mx-auto flex items-center justify-between p-6 lg:px-8 bg-white ">
       <div className="flex lg:flex-1">
         <a href="#" className="-m-1.5 p-1.5">
           <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl text-gray-500 font" ref={companyNameRef}>
