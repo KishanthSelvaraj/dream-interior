@@ -240,7 +240,7 @@ function Home() {
     setSubmitting(true); // Disable submit button while submitting
 
     try {
-      const response = await axios.post("https://dream-interior-2-3.onrender.com/signup", user);
+      const response = await axios.post("https://dream-interior2.onrender.com/signup", user);
       console.log("Response from server:", response.data); 
       sendwhatsapp(); // Log the response from the server
 
