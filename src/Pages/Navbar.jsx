@@ -33,11 +33,12 @@ export default function Navbar() {
     );
   }, []);
   return (
-    <div>
+    <div >
     {/* Navbar */}
-    <nav className="absolute top-0 left-0 right-0 z-10 bg-transparent mx-auto flex items-center justify-between p-6 lg:px-8 bg-white ">
-      <div className="flex lg:flex-1">
-        <a href="#" className="-m-1.5 p-1.5">
+    <nav className="absolute top-0 left-0 right-0 z-10 bg-transparent mx-auto flex items-center justify-between overflow-x-hidden p-2 md:py-3 md:px-6 lg:p-1 xl:py-1 xl:px-8 lg:px-8 bg-white ">
+      <div className="flex lg:flex-1 items-center ">
+      <img src="/dream-interior-logo.png" alt="dream interior logo" className="w-10  h-10 lg:w-20 lg:h-20 " />
+        <a href="#" className="-m-1.5 p-1.5 pt-3">
           <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl text-gray-500 font" ref={companyNameRef}>
             Dream Interior
           </h1>
@@ -89,11 +90,13 @@ export default function Navbar() {
       onClose={setMobileMenuOpen}
     >
       <div className="fixed inset-0 z-10" />
-      <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[#dbdddc] px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+      <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[#dbdddc] px-6 py-2 md:py-3 md:px-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
         <div className="flex items-center justify-between">
-          <a href="#" className="-m-1.5 p-1.5">
+       
+          <a href="#" className="-m-1.5 p-1.5 flex items-center">
+          <img src="/dream-interior-logo.png" alt="dream interior logo" className="w-10  h-10 lg:w-20 lg:h-20 " />
             <span className="sr-only">Your Company</span>
-            <h1 className="font-bold text-2xl md:text-2xl lg:text-2xl text-gray-500 font">
+            <h1 className="font-bold text-2xl md:text-2xl lg:text-2xl text-gray-500 font pt-2 ps-3">
               Dream Interior
             </h1>
           </a>
