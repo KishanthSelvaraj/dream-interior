@@ -647,7 +647,7 @@ function Home() {
               <div className="flex flex-col items-center justify-center">
                 <div className="flex mb-4 items-center justify-center">
                   <img
-                    src="/dream-interior-logo.png"
+                    src="/DI-image.png"
                     alt="dream interior logo"
                     className="w-10 h-10 lg:w-20 lg:h-20 "
                   />
