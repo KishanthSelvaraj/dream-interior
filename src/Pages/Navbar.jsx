@@ -37,7 +37,7 @@ export default function Navbar() {
     {/* Navbar */}
     <nav className="absolute top-0 left-0 right-0 z-10 bg-transparent mx-auto flex items-center justify-between overflow-x-hidden p-2 md:py-3 md:px-6 lg:p-1 xl:py-1 xl:px-8 lg:px-8 bg-white ">
       <div className="flex lg:flex-1 items-center ">
-      <img src="/dream-interior-logo.png" alt="dream interior logo" className="w-10  h-10 lg:w-20 lg:h-20 " />
+      <img src="/DI-image.png" alt="dream interior logo" className="w-10  h-10 lg:w-20 lg:h-20 " />
         <a href="#" className="-m-1.5 p-1.5 pt-3">
           <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl text-gray-500 font" ref={companyNameRef}>
             Dream Interior
